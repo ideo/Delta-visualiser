@@ -11,13 +11,13 @@ app.options('*', cors());
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get("/api/getTestData", function (req, res) {
+app.get("/api/getData", function (req, res) {
     // Identifying which document we'll be accessing/reading from
-    var doc = new GoogleSpreadsheet('1IMxP32roYfMTeZ4qSbwxNk7bOkooaUzl6zvlEleNDpM');
+    var doc = new GoogleSpreadsheet('1WHGBZLvwwF9Xj4H08J0fKX8Fd09k7hmID5R0Hy7D-2Y');
     // Authentication
     doc.useServiceAccountAuth(creds, function (err) {
         // Set up the sheet you'd like to get the data from. In this case 3.
-        doc.getCells(3, callback)
+        doc.getRows(1, callback)
         function callback(err, rows) {
             res.json(rows)
         }

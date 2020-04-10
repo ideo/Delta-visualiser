@@ -11,7 +11,7 @@ class List extends Component {
 
   getTestData = () => {
     fetch('http://localhost:5000/api/getTestData')
-      .then(res => res.json())
+      .then(res => console.log(res.json()))
       .then(testData => this.setState({ testData }))
   }
 
@@ -22,11 +22,11 @@ class List extends Component {
       <div className="List">
         <h1>Data</h1>
         <button onClick={() => this.getTestData()}>GET TEST DATA</button>
-        <div className='items'>
+        {/* <div className='items'>
           {Object.keys(testData).map((el, id) => {
             return <li key={testData[id]._value}>{testData[id]._value}</li>
           })}
-        </div>
+        </div> */}
 
       </div>
     );

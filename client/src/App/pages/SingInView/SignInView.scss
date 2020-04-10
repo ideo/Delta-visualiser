@@ -1,0 +1,40 @@
+@import '../../lib/styles.scss';
+
+.SignInView {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 20%;
+    img {
+        width: 60px;
+        height: auto;
+        margin: auto;
+        margin-bottom: 2rem;
+    }
+    form {
+        background: $UI_GREEN;
+        color: black;
+        width: 70%;
+        margin: auto;
+        max-width: 20rem;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center;
+        align-content: center;
+        label {
+            margin:auto;
+            margin-bottom: 1rem;
+        }
+        input {
+            margin:auto;
+            margin-bottom: 1rem;
+        }
+
+        .pw {
+            width: 60%;
+        }
+
+    }
+}

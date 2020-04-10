@@ -1,25 +1,23 @@
-import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
-import './App.css';
-import Home from './pages/Home';
-import List from './pages/List';
+import React, { useEffect, useState } from 'react';
+import { useGlobal, setGlobal } from 'reactn';
 
-class App extends Component {
-  render() {
-    const App = () => (
-      <div>
-        <Switch>
-          <Route exact path='/' component={Home}/>
-          <Route path='/list' component={List}/>
-        </Switch>
-      </div>
-    )
-    return (
-      <Switch>
-        <App/>
-      </Switch>
-    );
-  }
+import SignInView from './pages/SingInView/SignInView'
+import SurveyView from './pages/SurveyView/SurveyView'
+import gif  from './assets/deltalogo.gif';
+import './App.scss';
+
+setGlobal({
+  userIsAuth: !!localStorage.getItem('delta-survey'),
+});
+
+const App = () => {
+  const [userIsAuth] = useGlobal('userIsAuth');
+
+  return (
+    <div className="App">
+      {userIsAuth ?  <SurveyView /> : <SignInView />}
+    </div>
+  );
 }
 
 export default App;
