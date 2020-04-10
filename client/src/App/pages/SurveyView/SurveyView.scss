@@ -1,0 +1,40 @@
+@import '../../lib/styles.scss';
+.SurveyView {
+    .logo {
+        position: absolute;
+        top: -15rem;
+        right: 8%;
+        background-image: '../../assets/deltalogo.gif';
+        
+    }
+    img {
+        width: 60rem;
+        opacity: 10%;
+
+    }
+    
+    .HeardFrom {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        .content {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            .column {
+                width: 30%;
+                flex-direction: column;
+                position: relative;
+                .title {
+                    font-weight: bold;
+                    // margin: 0;
+                    margin-bottom: .5rem;
+                }
+                .body{
+                    margin: 0;
+                }
+            }
+        }
+        
+    }
+}

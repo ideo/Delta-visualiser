@@ -13,11 +13,50 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get("/api/getData", function (req, res) {
     // Identifying which document we'll be accessing/reading from
-    var doc = new GoogleSpreadsheet('1WHGBZLvwwF9Xj4H08J0fKX8Fd09k7hmID5R0Hy7D-2Y');
+    var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
     // Authentication
     doc.useServiceAccountAuth(creds, function (err) {
         // Set up the sheet you'd like to get the data from. In this case 3.
         doc.getRows(1, callback)
+        function callback(err, rows) {
+            res.json(rows)
+        }
+    });
+});
+
+app.get("/api/getAcrossCompanies", function (req, res) {
+    // Identifying which document we'll be accessing/reading from
+    var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
+    // Authentication
+    doc.useServiceAccountAuth(creds, function (err) {
+        // Set up the sheet you'd like to get the data from. In this case 3.
+        doc.getRows(2, callback)
+        function callback(err, rows) {
+            res.json(rows)
+        }
+    });
+});
+
+app.get("/api/getAcrossDep", function (req, res) {
+    // Identifying which document we'll be accessing/reading from
+    var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
+    // Authentication
+    doc.useServiceAccountAuth(creds, function (err) {
+        // Set up the sheet you'd like to get the data from. In this case 3.
+        doc.getRows(3, callback)
+        function callback(err, rows) {
+            res.json(rows)
+        }
+    });
+});
+
+app.get("/api/getAcrossSen", function (req, res) {
+    // Identifying which document we'll be accessing/reading from
+    var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
+    // Authentication
+    doc.useServiceAccountAuth(creds, function (err) {
+        // Set up the sheet you'd like to get the data from. In this case 3.
+        doc.getRows(4, callback)
         function callback(err, rows) {
             res.json(rows)
         }

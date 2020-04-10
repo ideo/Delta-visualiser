@@ -1,0 +1,18 @@
+.Header {
+    padding-bottom: 3rem;
+    .title {
+        font-size: 3rem;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom:1rem;
+        font-family: 'Rubik', sans-serif;
+    }
+    .subtitle {
+        font-family: 'Fira Sans', sans-serif;
+        margin-bottom:1rem;
+    }
+
+    .subtitle-bold {
+        font-weight: 500;
+    }
+}
