@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import gif  from '../../assets/deltalogo.gif';
-import { useGlobal, setGlobal } from 'reactn';
+import { useGlobal } from 'reactn';
 import './SignInView.scss';
 
 const SignInView = () => {
@@ -25,8 +24,11 @@ const SignInView = () => {
             {/* <img src={gif} alt={'delta'}/> */}
             <form onSubmit={handlePasswordSubmit}>
                 <label>Password:</label>
-                <input type='password' className='pw' onChange={(event) => setPassword(event.target.value)} />
-                <input type="submit" className='btn-primary' value="Submit" />
+                <div className='content'>
+                    <input type='password' className='pw' onChange={(event) => setPassword(event.target.value)} />
+                    <input type="submit" className='btn-primary' value="Submit" />
+                </div>
+
             </form>
         </div>
     )

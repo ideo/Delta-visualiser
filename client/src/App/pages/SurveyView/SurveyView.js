@@ -6,9 +6,10 @@ const SurveyView  = () => {
   const [data,setData] = useState('')
 
   useEffect(() => {
-    getAllData()
+    getAllData().then( res => setData(res))
   },[])
 
+  console.log(data)
   return (
     <div className="SurveyView">
       Survey View

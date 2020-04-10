@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { useGlobal, setGlobal } from 'reactn';
 
 import SignInView from './pages/SingInView/SignInView'
 import SurveyView from './pages/SurveyView/SurveyView'
-import gif  from './assets/deltalogo.gif';
 import './App.scss';
 
 setGlobal({

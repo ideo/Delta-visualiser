@@ -8,7 +8,7 @@ export async function getAllData () {
     if (window.location.origin.includes('localhost')) {
         host = 'http://localhost:5000/api/getData';
     } else {
-        host = 'https://littervisualizer.herokuapp.com/api/getData'; //replace here
+        host = 'https://deltavis.herokuapp.com/api/getData'; //replace here
     }
     const data = await fetch(host, {
         headers : { 

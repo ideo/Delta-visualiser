@@ -13,28 +13,31 @@
         margin-bottom: 2rem;
     }
     form {
-        background: $UI_GREEN;
+        // background: $UI_GREEN;
         color: black;
-        width: 70%;
         margin: auto;
         max-width: 20rem;
         display: flex;
         flex-direction: column;
-        padding: 1rem;
+        text-align: left;
         justify-content: center;
         align-content: center;
         label {
-            margin:auto;
             margin-bottom: 1rem;
         }
-        input {
-            margin:auto;
-            margin-bottom: 1rem;
+        .content {
+            flex-direction: row;
+            width: 100%;
+            .btn-primary {
+                width: 30%;
+            }
+    
+            .pw {
+                width: 60%;
+                background: rgb(235, 235, 235);
+            }
         }
-
-        .pw {
-            width: 60%;
-        }
+        
 
     }
 }
