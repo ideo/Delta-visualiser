@@ -18,7 +18,6 @@ export async function getAllData () {
   
       })
         .then(res => {return res.json()})
-        console.log('data fetched', data)
     return data
 }
 
