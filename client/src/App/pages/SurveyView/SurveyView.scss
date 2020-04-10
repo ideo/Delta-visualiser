@@ -1,40 +1,41 @@
-@import '../../lib/styles.scss';
+@import "../../lib/styles.scss";
 .SurveyView {
     .logo {
         position: absolute;
         top: -15rem;
         right: 8%;
-        background-image: '../../assets/deltalogo.gif';
-        
-    }
-    img {
+        background-image: "../../assets/deltalogo.gif";
+      }
+      img {
         width: 60rem;
         opacity: 10%;
+      }
+  .landing {
+    height: 60rem;
 
-    }
-    
     .HeardFrom {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 40rem;
+      .content {
         display: flex;
-        flex-direction: column;
-        width: 100%;
-        .content {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            .column {
-                width: 30%;
-                flex-direction: column;
-                position: relative;
-                .title {
-                    font-weight: bold;
-                    // margin: 0;
-                    margin-bottom: .5rem;
-                }
-                .body{
-                    margin: 0;
-                }
-            }
+        flex-direction: row;
+        justify-content: space-between;
+        .column {
+          width: 30%;
+          flex-direction: column;
+          position: relative;
+          .title {
+            font-weight: bold;
+            // margin: 0;
+            margin-bottom: 0.5rem;
+          }
+          .body {
+            margin: 0;
+          }
         }
-        
+      }
     }
+  }
 }

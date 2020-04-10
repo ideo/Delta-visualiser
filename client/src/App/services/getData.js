@@ -74,3 +74,21 @@ export async function getAcrossSen () {
         .then(res => {return res.json()})
     return data
 }
+
+export async function getFeeling () {
+    let host;
+    if (window.location.origin.includes('localhost')) {
+        host = 'http://localhost:5000/api/getFeel';
+    } else {
+        host = 'https://deltavis.herokuapp.com/api/getFeel'; //replace here
+    }
+    const data = await fetch(host, {
+        headers : { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+         }
+  
+      })
+        .then(res => {return res.json()})
+    return data
+}

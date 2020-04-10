@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import { getAllData, getAcrossCompanies, getAcrossDepartments, getAcrossSen } from '../../services/getData'
+import {
+  getAllData,
+  getAcrossCompanies,
+  getAcrossDepartments,
+  getAcrossSen,
+  getFeeling
+} from '../../services/getData'
 import Header from '../../components/Header/Header'
+import HowWeFeel from '../HowWeFeel/HowWeFeel'
 import gif from '../../assets/deltalogo.gif'
 import { weHeardFrom, sampleData } from '../../lib/copy'
 import PieChart from '../../components/PieChart/PieChart';
 import './SurveyView.scss';
-
-
-
 
 
 const SurveyView = () => {
@@ -15,6 +19,7 @@ const SurveyView = () => {
   const [companies, setAcrossCompanies] = useState('')
   const [seniority, setAcrossSeniority] = useState('')
   const [departments, setDepartments] = useState('')
+  const [feeling, setFeeling] = useState('')
 
   const setCleanData = (items) => {
     const clean = items.map(item => {
@@ -34,7 +39,8 @@ const SurveyView = () => {
     getAcrossCompanies().then(res => setAcrossCompanies(setCleanData(res)))
     getAcrossDepartments().then(res => setDepartments(setCleanData(res)))
     getAcrossSen().then(res => setAcrossSeniority(setCleanData(res)))
-  }, [])
+    getFeeling().then(res => setFeeling(setCleanData(res)))
+  }, [setAcrossCompanies, setDepartments, setAcrossSeniority])
 
 
   const renderColumnContent = (title, body, data) => {
@@ -42,15 +48,15 @@ const SurveyView = () => {
       <div className='column' key={title}>
         <h4 className='title'><span className='highlighted'>{title}</span></h4>
         <p className='body'>{body}</p>
-        <PieChart data={data} width={200} height={200} color={'set3'}/>
+        <PieChart data={data} width={200} height={200} color={'set3'} />
       </div>
     )
   }
 
   const getKeyData = (key) => {
-    if(key ==='companies') return companies
-    if(key ==='seniority') return seniority
-    if(key ==='departments') return departments
+    if (key === 'companies') return companies
+    if (key === 'seniority') return seniority
+    if (key === 'departments') return departments
   }
 
   const renderHeardFrom = () => {
@@ -62,7 +68,7 @@ const SurveyView = () => {
           {weHeardFrom.map(item => {
             return renderColumnContent(item.title, item.body, getKeyData(item.key))
           })}
-          
+
         </div>
       </div>
     )
@@ -71,11 +77,15 @@ const SurveyView = () => {
   return (
     <div className="SurveyView">
       <div className='logo'>
-        
+
       </div>
       <img src={gif} className='logo'></img>
-      <Header />
-      {renderHeardFrom()}
+      <div className='landing'>
+        <Header />
+        {renderHeardFrom()}
+      </div>
+
+      <HowWeFeel data={feeling} companies={companies} seniority={seniority} />
     </div>
   );
 }
