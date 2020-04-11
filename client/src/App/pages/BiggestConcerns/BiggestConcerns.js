@@ -31,8 +31,6 @@ const BiggestConcerns = () => {
                     {concerns && concerns.length > 0 && <BarChart data={concerns} key={'what'} format={'%'} title={'% of responses'} marginBottom={130} marginRight={90}/>}
                 </div>
             </div>
-
-            {/* <TwoColumnBlock column1={accessTools[0]} column2={accessTools[1]} img1={internet} img2={chairs}/> */}
         </div>
     )
 }
