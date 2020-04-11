@@ -2,6 +2,9 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    img,svg {
+      opacity: 100% !important;
+    }
     .column {
       width: 45%;
       margin-top: 2rem;
