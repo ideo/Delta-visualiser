@@ -20,7 +20,7 @@ const BiggestConcerns = () => {
             <div className='content'>
                 <div className='column'>
                     <div className='title'>
-                        <span className='highlighted'>WHAT DO WE DO?</span>
+                        <div className='bold'><span className='highlighted'>WHAT DO WE DO?</span></div>
                         <div className='body'>
                             {concernsCopy[1]}<br /><br />
                             {concernsCopy[2]}<br /><br />
