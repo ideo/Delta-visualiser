@@ -109,3 +109,21 @@ export async function getFeelingByCompany(company, level) {
         });
     return data
 }
+
+export async function getConcerns() {
+    let host;
+    if (window.location.origin.includes('localhost')) {
+        host = 'http://localhost:5000/api/getConcerns';
+    } else {
+        host = 'https://deltavis.herokuapp.com/api/getConcerns'; //replace here
+    }
+    const data = await fetch(host, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+
+    })
+        .then(res => { return res.json() })
+    return data
+}

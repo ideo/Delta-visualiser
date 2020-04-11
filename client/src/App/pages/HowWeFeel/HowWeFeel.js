@@ -173,7 +173,7 @@ const HowWeFeel = (props) => {
           {renderControls()}
         </div>
         <div className='chart'>
-          {feelingsBy && feelingsBy.length > 0 && <BarChart data={feelingsBy} />}
+          {feelingsBy && feelingsBy.length > 0 && <BarChart data={feelingsBy} title={'nr of peope'} marginBottom={80} marginRight={60}/>}
         </div>
       </div>
       {renderLearning1()}

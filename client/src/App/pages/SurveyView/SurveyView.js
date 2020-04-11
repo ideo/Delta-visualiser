@@ -9,6 +9,7 @@ import {
 import Header from '../../components/Header/Header'
 import HowWeFeel from '../HowWeFeel/HowWeFeel'
 import AccessTools from '../AccessTools/AccessTools'
+import BiggestConcerns from '../BiggestConcerns/BiggestConcerns'
 import gif from '../../assets/deltalogo.gif'
 import { weHeardFrom, sampleData } from '../../lib/copy'
 import PieChart from '../../components/PieChart/PieChart';
@@ -87,6 +88,7 @@ const SurveyView = () => {
       </div>
       <HowWeFeel data={feeling} companies={companies} seniority={seniority} />
       <AccessTools />
+      <BiggestConcerns />
     </div>
   );
 }

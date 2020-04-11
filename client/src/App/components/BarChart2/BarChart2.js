@@ -2,14 +2,14 @@ import React, { useEffect, useState } from 'react';
 import { ResponsiveBar } from '@nivo/bar'
 import './BarChart.scss';
 
-const BarChart = ({data, title, marginBottom, marginRight}) => {
+const BarChart = ({data, keys}) => {
   return (
     <div className="BarChart">
       <ResponsiveBar
         data={data}
         keys={[ 'value' ]}
         indexBy="label"
-        margin={{ top: 50, right: 20, bottom: marginBottom, left: marginRight }}
+        margin={{ top: 50, right: 0, bottom: 70, left: 60 }}
         padding={0.3}
         colors={{ scheme: 'pastel2' }}
         defs={[
@@ -52,7 +52,7 @@ const BarChart = ({data, title, marginBottom, marginRight}) => {
         axisBottom={{
             tickSize: 5,
             tickPadding: 5,
-            tickRotation: -40,
+            tickRotation: 59,
             legend: '',
             legendPosition: 'middle',
             legendOffset: 32
@@ -61,7 +61,7 @@ const BarChart = ({data, title, marginBottom, marginRight}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: title,
+            legend: 'nr of people',
             legendPosition: 'middle',
             legendOffset: -40
         }}
