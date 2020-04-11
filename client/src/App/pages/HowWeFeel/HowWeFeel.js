@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getFeeling } from '../../services/getData'
+import { getFeeling, getFeelingByCompany } from '../../services/getData'
 // import { BarChart } from '../../components/BarChart/Barchart'
 import BubbleChart from '../../components/BubbleChart/BubbleChart'
 import BarChart from '../../components/BarChart/BarChart'
@@ -7,6 +7,8 @@ import './HowWeFeel.scss';
 
 const HowWeFeel = (props) => {
   const [feeling, setFeeling] = useState('')
+  const [feelingsBy, setFeelingsBy] = useState('')
+  const [company, setCompany] = useState('All')
 
   const setCleanData = (items) => {
     const clean = items.map(item => {
@@ -23,7 +25,9 @@ const HowWeFeel = (props) => {
 
   useEffect(() => {
     getFeeling().then(res => setFeeling(setCleanData(res)))
-  }, [])
+    company !== 'All' && getFeelingByCompany(company).then(res => setFeelingsBy(res))
+    company === 'All' && getFeeling('All').then(res => setFeelingsBy(res))
+  }, [company])
 
   const renderControls = () => {
     const { companies } = props.companies;
@@ -31,10 +35,10 @@ const HowWeFeel = (props) => {
       <div className='controls'>
         <div>
           <label for="cars">Choose a company:</label>
-          <select id="cars">
+          <select id="cars" onChange={(e) => setCompany(e.target.value)}>
+            <option key={'All'} value={'All'}>{'All'}</option>
             {props.companies && props.companies.map(item => {
-              console.log(item)
-              return <option value={item.label}>{item.label}</option>
+              return <option key={item.label} value={item.label}>{item.label}</option>
             })}
 
           </select>
@@ -63,7 +67,7 @@ const HowWeFeel = (props) => {
           </div>
           <div className='body'>
             “Creating an account with Trello and keeping track of the tasks and how each one is progressing. We use shared screen a lot in Teams.”
-    <br /><br />
+            <br /><br />
             ”Daily reports or calls of 10 minutes maximum to know what we have pending, what we have completed and how we will organize ourselves during the day.”
 
           </div>
@@ -104,7 +108,7 @@ const HowWeFeel = (props) => {
             <div className='body'>
               Continue to take pride in your productivity but be sure to take time for de-stressing and relaxation.
   
-    Look for opportunities to ease the burden of your managers and leads, through things like proactive communication, status updates, and self-directedness.
+            Look for opportunities to ease the burden of your managers and leads, through things like proactive communication, status updates, and self-directedness.
   
           </div>
           </div>
@@ -140,7 +144,7 @@ const HowWeFeel = (props) => {
             <div className='body'>
               Empower all of our employees to support each other, through check-ins and support networks, and don’t be afraid to be open about your own challenges.
   
-    Set an example: highlight your own best practices to show what good remote leadership looks like.
+              Set an example: highlight your own best practices to show what good remote leadership looks like.
   
           </div>
           </div>
@@ -149,7 +153,6 @@ const HowWeFeel = (props) => {
       </div>
     )
   }
-
 
   return (
     <div className='HowWeFeel'>
@@ -160,8 +163,7 @@ const HowWeFeel = (props) => {
           {renderControls()}
         </div>
         <div className='chart'>
-          {/* <BubbleChart root={sampleData}/> */}
-          {feeling.length > 0 && <BarChart data={feeling} />}
+          {feelingsBy && feelingsBy.length > 0 && <BarChart data={feelingsBy} />}
         </div>
       </div>
       {renderLearning1()}
@@ -171,51 +173,3 @@ const HowWeFeel = (props) => {
 }
 
 export default HowWeFeel;
-
-const sampleData = {
-  "name": "how we feel",
-  "color": "hsl(0, 100%, 50%)",
-  "children": [
-    {
-      "name": "chart",
-      "color": "hsl(222, 70%, 50%)",
-      "loc": 34231
-    },
-    {
-      "name": "xAxis",
-      "color": "hsl(340, 70%, 50%)",
-      "loc": 168082
-    },
-    {
-      "name": "yAxis",
-      "color": "hsl(41, 70%, 50%)",
-      "loc": 82875
-    },
-    {
-      "name": "layers",
-      "color": "hsl(17, 70%, 50%)",
-      "loc": 117859
-    }
-  ]
-}
-
-const data2 = [
-  {
-    "label": "AD",
-    "value": 131,
-
-  },
-  {
-    "title": "AE",
-
-    "value": 166,
-
-  },
-  {
-    "title": "AF",
-
-    "value": 151,
-
-  },
-
-]
