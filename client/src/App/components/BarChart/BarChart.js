@@ -2,23 +2,23 @@ import React, { useEffect, useState } from 'react';
 import { ResponsiveBar } from '@nivo/bar'
 import './BarChart.scss';
 
-const BarChart = ({data, title, marginBottom, marginRight}) => {
+const BarChart = ({data, title, marginBottom, marginRight, key}) => {
   return (
     <div className="BarChart">
       <ResponsiveBar
         data={data}
-        keys={[ 'value' ]}
+        keys={[ 'value', 'Concern', 'Working well' ]}
         indexBy="label"
         margin={{ top: 50, right: 20, bottom: marginBottom, left: marginRight }}
         padding={0.3}
         // colors={{ scheme: 'pastel2' }}
-        colors={"#FFC540"}
+        colors={"#FFF9C3"}
         defs={[
             {
                 id: 'dots',
                 type: 'patternDots',
                 background: 'inherit',
-                color: '#38bcb2',
+                color: '#3CDE9C',
                 size: 4,
                 padding: 1,
                 stagger: true
@@ -27,24 +27,40 @@ const BarChart = ({data, title, marginBottom, marginRight}) => {
                 id: 'lines',
                 type: 'patternLines',
                 background: 'inherit',
-                color: '#eed312',
+                color: '#F8DD23',
                 rotation: -45,
-                lineWidth: 6,
+                lineWidth: 5,
                 spacing: 10
+            },
+            {
+                id: 'dots2',
+                type: 'patternDots',
+                background: 'inherit',
+                color: '#F8DD23',
+                size: 4,
+                padding: 1,
+                stagger: true
             }
         ]}
         fill={[
             {
                 match: {
-                    id: 'fries'
+                    id: 'Concern'
                 },
                 id: 'dots'
             },
             {
                 match: {
-                    id: 'sandwich'
+                    id: 'value'
                 },
                 id: 'lines'
+            }
+            ,
+            {
+                match: {
+                    id: 'Working well'
+                },
+                id: 'dots2'
             }
         ]}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 1.6 ] ] }}

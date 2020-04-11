@@ -28,7 +28,7 @@ const BiggestConcerns = () => {
                     </div>
                 </div>
                 <div className='column big'>
-                    {concerns && concerns.length > 0 && <BarChart data={concerns} format={'%'} title={'% of responses'} marginBottom={130} marginRight={90}/>}
+                    {concerns && concerns.length > 0 && <BarChart data={concerns} key={'what'} format={'%'} title={'% of responses'} marginBottom={130} marginRight={90}/>}
                 </div>
             </div>
 

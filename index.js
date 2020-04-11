@@ -73,6 +73,26 @@ const getShapedFeeling = (rows) => {
     return data
 }
 
+const getShapedFeeling2 = (rows) => {
+    const data = rows.map(row => {
+        return {
+            'label': row.title,
+            'Concern': row.value,
+        }
+    })
+    return data
+}
+
+const getShapedFeeling3 = (rows) => {
+    const data = rows.map(row => {
+        return {
+            'label': row.title,
+            'Working well': row.value,
+        }
+    })
+    return data
+}
+
 
 app.get("/api/getFeel", function (req, res) {
     var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
@@ -165,7 +185,7 @@ app.get("/api/getConcerns", function (req, res) {
     doc.useServiceAccountAuth(creds, function (err) {
         doc.getRows(7, callback)
         function callback(err, rows) {
-            res.json(getShapedFeeling(rows))
+            res.json(getShapedFeeling2(rows))
         }
     });
 });
@@ -176,7 +196,7 @@ app.get("/api/getWorkingWell", function (req, res) {
     doc.useServiceAccountAuth(creds, function (err) {
         doc.getRows(8, callback)
         function callback(err, rows) {
-            res.json(getShapedFeeling(rows))
+            res.json(getShapedFeeling3(rows))
         }
     });
 });

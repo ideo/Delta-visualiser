@@ -36,6 +36,7 @@ const WorkingWell = () => {
             </div>
         )
     }
+    
     return (
         <div className='WorkingWell'>
             <h1>{workingWellCopy[0]}</h1>
@@ -50,11 +51,11 @@ const WorkingWell = () => {
                     </div>
                 </div>
                 <div className='column big'>
-                    {workingWell && workingWell.length > 0 && <BarChart data={workingWell} format={'%'} title={'% of responses'} marginBottom={130} marginRight={120} />}
+                    {workingWell && workingWell.length > 0 && 
+                        <BarChart data={workingWell} format={'%'} title={'% of responses'} marginBottom={130} marginRight={120} key={'what'} />}
                 </div>
             </div>
             {renderQuotes()}
-            {/* <TwoColumnBlock column1={accessTools[0]} column2={accessTools[1]} img1={internet} img2={chairs}/> */}
         </div>
     )
 }
