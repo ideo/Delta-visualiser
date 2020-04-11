@@ -61,7 +61,7 @@ const BarChart = ({data, keys}) => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: 'amount of answers',
+            legend: 'nr of people',
             legendPosition: 'middle',
             legendOffset: -40
         }}

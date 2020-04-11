@@ -16,6 +16,23 @@ export const weHeardFrom = [
     },
 ]
 
+export const accessTools = [
+    {
+        header:'',
+        fact:'Only 2 out of every 3 of us have a stable internet connection.',
+        body: 'Consider solutions for remote work that don’t require high bandwidth, or can be accomplished asynchronously.',
+        link: 'Check these tips for making the most of your home wifi/internet.',
+        site: 'https://medium.com/@icpwow/estar-online-en-tiempos-de-cuarentena-recomendaciones-para-mejorar-tu-wifi-a5d21e7c8126'
+    },
+    {
+        header: '',
+        fact: 'And only half of us have a desk or a dedicated working space at home.',
+        body: 'Make the most of what you’ve got. See here for tips on setting up an ergonomic workstation at home - no more backaches!',
+        link: 'Get inspired from how other Intercorpee’s have set up their workstations.',
+        site: 'https://medium.com/@icpwow/espacios-de-trabajo-en-remoto-en-intercorp-5c6b9c8c750b'
+    }
+]
+
 export const sampleData = [
     {
         "id": "stylus",

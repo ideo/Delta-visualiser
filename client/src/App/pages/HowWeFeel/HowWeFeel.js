@@ -48,7 +48,7 @@ const HowWeFeel = (props) => {
 
           </select>
         </div>
-        <br /><br />
+        <br />
         <div>
           <label for="level">Choose a level of seniority:</label><br></br>
 

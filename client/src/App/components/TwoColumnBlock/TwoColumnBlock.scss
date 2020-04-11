@@ -1,0 +1,49 @@
+.TwoColumnBlock {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .column {
+      width: 45%;
+      margin-top: 2rem;
+      flex-direction: column;
+      position: relative;
+      img {
+          width: 250px;
+          height: auto;
+          opacity: 100%;
+      }
+      .header {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+      .fact {
+          font-size: 1.5rem;
+        //   font-weight: bold;
+      }
+      .highlighted {
+        font-weight: bold;
+        margin: 2rem 0;
+        margin-bottom: 0.5rem;
+      }
+      .title {
+        margin: 2rem 0;
+        .body {
+          display: none;
+        }
+        span {
+          margin: 1rem 0;
+          cursor: pointer;
+        }
+        &:hover {
+          .body {
+              padding: 1.5rem 0;
+            display: block;
+          }
+        }
+      }
+      .body {
+        // display: none;
+        margin-top: 1rem;
+      }
+    }
+  }
