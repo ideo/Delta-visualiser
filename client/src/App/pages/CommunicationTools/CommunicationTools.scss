@@ -1,0 +1,30 @@
+@import '../../lib/styles.scss';
+
+.CommunicationTools {
+    h1 {
+        max-width: 80%;
+    }
+    .subtitle {
+        font-size: 1.3rem;
+    }
+
+    .text {
+        
+            margin: 2rem 0;
+            .body {
+              padding: 1.5rem 0;
+              // display: none;
+            }
+            span {
+              margin: 1rem 0;
+              cursor: pointer;
+            }
+            // &:hover {
+            //   .body {
+                  
+            //     display: block;
+            //   }
+            // }
+          
+    }
+}

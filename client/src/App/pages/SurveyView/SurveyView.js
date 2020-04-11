@@ -10,6 +10,9 @@ import Header from '../../components/Header/Header'
 import HowWeFeel from '../HowWeFeel/HowWeFeel'
 import AccessTools from '../AccessTools/AccessTools'
 import BiggestConcerns from '../BiggestConcerns/BiggestConcerns'
+import CommunicationTools from '../CommunicationTools/CommunicationTools'
+import WorkingWell from '../WorkingWell/WorkingWell'
+import ProductiveTime from '../ProductiveTime/ProductiveTime'
 import gif from '../../assets/deltalogo.gif'
 import { weHeardFrom, sampleData } from '../../lib/copy'
 import PieChart from '../../components/PieChart/PieChart';
@@ -89,6 +92,9 @@ const SurveyView = () => {
       <HowWeFeel data={feeling} companies={companies} seniority={seniority} />
       <AccessTools />
       <BiggestConcerns />
+      <CommunicationTools />
+      <WorkingWell />
+      <ProductiveTime />
     </div>
   );
 }

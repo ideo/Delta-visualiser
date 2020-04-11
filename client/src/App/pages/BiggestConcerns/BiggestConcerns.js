@@ -14,7 +14,6 @@ const BiggestConcerns = () => {
 
     }, [setConcerns])
 
-    console.log('concerns', concerns)
     return (
         <div className='BiggestConcerns'>
             <h1>{concernsCopy[0]}</h1>
@@ -29,7 +28,7 @@ const BiggestConcerns = () => {
                     </div>
                 </div>
                 <div className='column big'>
-                    {concerns && concerns.length > 0 && <BarChart data={concerns} format={'%'} title={'% of votes'} marginBottom={130} marginRight={90}/>}
+                    {concerns && concerns.length > 0 && <BarChart data={concerns} format={'%'} title={'% of responses'} marginBottom={130} marginRight={90}/>}
                 </div>
             </div>
 

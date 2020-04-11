@@ -18,7 +18,7 @@ const TwoColumnBlock = ({ column1, column2, img1, img2 }) => {
                     <div className='body'>
                         {column1.body}<br /><br />
                         {column1.link}<br /><br />
-                        <a href={column1.site}>Go to tips</a>
+                        {column1.site && <a href={column1.site}>Go to tips</a>}
                     </div>
                 </div>
 
@@ -37,7 +37,7 @@ const TwoColumnBlock = ({ column1, column2, img1, img2 }) => {
                     <div className='body'>
                         {column2.body}<br /><br />
                         {column2.link}<br /><br />
-                        <a href={column2.link}>See inspiration</a>
+                        {column2.site && <a href={column2.link}>See inspiration</a>}
                     </div>
                 </div>
 

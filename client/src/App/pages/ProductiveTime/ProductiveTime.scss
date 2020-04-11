@@ -1,0 +1,39 @@
+@import "../../lib/styles.scss";
+
+.ProductiveTime {
+    h1 {
+        // max-width: 80%;;
+    }
+  .content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .column {
+      width: 45%;
+      img {
+        width: 100%;
+        margin-top: -3rem;
+        height: auto;
+        opacity: 100%;;
+    }
+    }
+  }
+
+  .text {
+    margin: 2rem 0;
+    .body {
+      padding: 1.5rem 0;
+      // display: none;
+    }
+    span {
+      margin: 1rem 0;
+      cursor: pointer;
+    }
+    // &:hover {
+    //   .body {
+
+    //     display: block;
+    //   }
+    // }
+  }
+}

@@ -170,6 +170,17 @@ app.get("/api/getConcerns", function (req, res) {
     });
 });
 
+app.get("/api/getWorkingWell", function (req, res) {
+    var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
+    // Authentication
+    doc.useServiceAccountAuth(creds, function (err) {
+        doc.getRows(8, callback)
+        function callback(err, rows) {
+            res.json(getShapedFeeling(rows))
+        }
+    });
+});
+
 
 // // Handles any requests that don't match the ones above
 app.get('*', (req, res) => {

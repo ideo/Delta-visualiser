@@ -10,7 +10,7 @@ const PieChart = ({data, color}) => {
         margin={{ top: 10, right: 20, bottom: 10, left: 20 }}
         cornerRadius={2}
         innerRadius={0.5}
-        colors={{ scheme: 'set3' }}
+        colors={{ scheme: 'nivo' }}
         borderWidth={1}
         borderColor={{ from: 'color', modifiers: [ [ 'darker', 0.2 ] ] }}
         enableRadialLabels={false}

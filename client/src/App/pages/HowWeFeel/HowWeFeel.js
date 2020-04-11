@@ -166,14 +166,14 @@ const HowWeFeel = (props) => {
 
   return (
     <div className='HowWeFeel'>
+      <h1>How did we feel about the last week of remote working?</h1>
       <div className='content'>
         <div className='text'>
-          <h1>How did we feel about the last week of remote working?</h1>
           <p className='bold'>Change the settings to find out more</p>
           {renderControls()}
         </div>
         <div className='chart'>
-          {feelingsBy && feelingsBy.length > 0 && <BarChart data={feelingsBy} title={'nr of peope'} marginBottom={80} marginRight={60}/>}
+          {feelingsBy && feelingsBy.length > 0 && <BarChart data={feelingsBy} title={'nr of people'} marginBottom={80} marginRight={60}/>}
         </div>
       </div>
       {renderLearning1()}

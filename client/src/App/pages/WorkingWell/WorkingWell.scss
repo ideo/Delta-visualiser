@@ -1,6 +1,6 @@
 @import "../../lib/styles.scss";
 
-.BiggestConcerns {
+.WorkingWell {
   .content {
     display: flex;
     flex-direction: row;
@@ -29,6 +29,22 @@
       .body {
         // display: none;
         // margin-top: 1rem;
+      }
+    }
+  }
+
+  .quotes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .item {
+      width: 30%;
+      margin-top: 2rem;
+      .quote {
+        //   font-family: 'Rubik', sans-serif;
+          font-weight: bold;
+          font-size: 1.2rem;
+          margin-bottom: .5rem;
       }
     }
   }

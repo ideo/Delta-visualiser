@@ -3,7 +3,8 @@
     flex-direction: row;
     justify-content: space-between;
     .column {
-      width: 45%;
+      width: 40%;
+      
       margin-top: 2rem;
       flex-direction: column;
       position: relative;
@@ -13,11 +14,11 @@
           opacity: 100%;
       }
       .header {
-        font-size: 3rem;
+        font-size: 1.5rem;
         font-weight: bold;
       }
       .fact {
-          font-size: 1.5rem;
+          font-size: 1rem;
         //   font-weight: bold;
       }
       .highlighted {
