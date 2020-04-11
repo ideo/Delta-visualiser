@@ -9,6 +9,7 @@ const HowWeFeel = (props) => {
   const [feeling, setFeeling] = useState('')
   const [feelingsBy, setFeelingsBy] = useState('')
   const [company, setCompany] = useState('All')
+  const [level, setLevel] = useState('All')
 
   const setCleanData = (items) => {
     const clean = items.map(item => {
@@ -25,12 +26,16 @@ const HowWeFeel = (props) => {
 
   useEffect(() => {
     getFeeling().then(res => setFeeling(setCleanData(res)))
-    company !== 'All' && getFeelingByCompany(company).then(res => setFeelingsBy(res))
-    company === 'All' && getFeeling('All').then(res => setFeelingsBy(res))
-  }, [company])
+    getFeelingByCompany(company, level).then(res => setFeelingsBy(res))
+  }, [company, level])
+
+  const handleCheckboxes = (role) => {
+    setLevel(role)
+  }
+
 
   const renderControls = () => {
-    const { companies } = props.companies;
+
     return (
       <div className='controls'>
         <div>
@@ -43,15 +48,20 @@ const HowWeFeel = (props) => {
 
           </select>
         </div>
-
+        <br /><br />
         <div>
-          <label for="cars">Choose a level of seniority:</label>
-          <select id="cars">
-            {props.seniority && props.seniority.map(item => {
-              return <option value={item.label}>{item.label}</option>
-            })}
+          <label for="level">Choose a level of seniority:</label><br></br>
 
-          </select>
+          <input type="radio" id={'All'} name={'All'} value={'All'} onClick={() => handleCheckboxes('All')} checked={level === 'All'} />
+          <label for={'All'} >{'All'}</label>
+          {props.seniority && props.seniority.map(item => {
+            return <div className='radio' onClick={() => handleCheckboxes(item.label)}>
+              <input type="radio" id={item.label} name={item.label} value={item.label} checked={level === item.label} />
+              <label for={item.label} >{item.label}</label><br></br>
+            </div>
+          })}
+
+
         </div>
 
       </div>
@@ -107,9 +117,9 @@ const HowWeFeel = (props) => {
             <span className='highlighted'>WHAT DO WE DO?</span>
             <div className='body'>
               Continue to take pride in your productivity but be sure to take time for de-stressing and relaxation.
-  
+
             Look for opportunities to ease the burden of your managers and leads, through things like proactive communication, status updates, and self-directedness.
-  
+
           </div>
           </div>
 
@@ -143,9 +153,9 @@ const HowWeFeel = (props) => {
             <span className='highlighted'>WHAT DO WE DO?</span>
             <div className='body'>
               Empower all of our employees to support each other, through check-ins and support networks, and don’t be afraid to be open about your own challenges.
-  
+
               Set an example: highlight your own best practices to show what good remote leadership looks like.
-  
+
           </div>
           </div>
 

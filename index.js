@@ -88,29 +88,32 @@ app.get("/api/getFeel", function (req, res) {
 
 
 const getFilteredFeeling = (rows, company) => {
-    const data = rows.map(row => {
+    var data = rows.map(row => {
         return {
             'company': row.company,
-            'role': row.role,
+            'level': row.role,
             'feeling': row.feeling
         }
     })
-    return data.filter(item => {
-        return item.company === company;
-    });
+    if(company !== 'All') {
+        data = data.filter(item => {
+            return item.company === company;
+        })
+        return data
+    } else {
+        return data
+    }
 }
 
-const getFilteredFeelingRole = (rows, role) => {
-    const data = rows.map(row => {
-        return {
-            'company': row.company,
-            'role': row.role,
-            'feeling': row.feeling
-        }
-    })
-    return data.filter(item => {
-        return item.role === role;
-    });
+const getFilteredFeelingRole = (data, level) => { 
+    if(level !== 'All') {
+        data = data.filter(item => {
+            return item.level === level;
+        })
+        return data
+    } else {
+        return data
+    }
 }
 
 const countTimesRepeat = (data, feeling) => {
@@ -149,7 +152,8 @@ app.post("/api/getFeelingByCompany", function (req, res) {
         doc.getRows(6, callback)
         function callback(err, rows) {
             const filteredByCompany = getFilteredFeeling(rows, req.body.company);
-            const aggregated = aggregateResult(filteredByCompany);
+            const filteredByRole = getFilteredFeelingRole(filteredByCompany, req.body.level)
+            const aggregated = aggregateResult(filteredByRole);
             res.json(aggregated)
         }
     });

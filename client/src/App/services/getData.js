@@ -90,25 +90,7 @@ export async function getFeeling() {
     return data
 }
 
-export async function getFeelingsBy() {
-    let host;
-    if (window.location.origin.includes('localhost')) {
-        host = 'http://localhost:5000/api/getFeelingBy';
-    } else {
-        host = 'https://deltavis.herokuapp.com/api/getFeelingBy'; //replace here
-    }
-    const data = await fetch(host, {
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json'
-        }
-
-    })
-        .then(res => { return res.json() })
-    return data
-}
-
-export async function getFeelingByCompany(company) {
+export async function getFeelingByCompany(company, level) {
     let host;
     if (window.location.origin.includes('localhost')) {
         host = 'http://localhost:5000/api/getFeelingByCompany';
@@ -117,6 +99,7 @@ export async function getFeelingByCompany(company) {
     }
     const data = await axios.post(host, {
         company,
+        level
     })
         .then(function (response) {
            return response.data
