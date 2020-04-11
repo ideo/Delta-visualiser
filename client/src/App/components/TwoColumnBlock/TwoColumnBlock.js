@@ -1,4 +1,6 @@
 import React from 'react';
+import {ReactComponent as Internet } from '../../assets/internet.svg'
+import chairs from '../../assets/chairs.jpg'
 import './TwoColumnBlock.scss';
 
 const TwoColumnBlock = ({ column1, column2, img1, img2 }) => {
@@ -6,7 +8,8 @@ const TwoColumnBlock = ({ column1, column2, img1, img2 }) => {
     return (
         <div className='TwoColumnBlock'>
             <div className='column'>
-                <img src={img1} alt='img' />
+                {/* <img src={img1} alt='img' /> */}
+                <Internet/>
                 <div className='header'>
                     {column1.header}
                 </div>
@@ -25,7 +28,8 @@ const TwoColumnBlock = ({ column1, column2, img1, img2 }) => {
             </div>
 
             <div className='column'>
-                <img src={img2} alt='img' />
+                <img src={chairs} alt='img' />
+                {/* <Chairs /> */}
                 <div className='header'>
                     {column2.header}
                 </div>
