@@ -81,7 +81,7 @@ const SurveyView = () => {
 
   return (
     <div className="SurveyView">
-      {/* <img src={gif} className='logo'></img> */}
+      <img src={gif} className='logo'></img>
       <div className='landing'>
         <Header />
         {renderHeardFrom()}
