@@ -11,7 +11,8 @@ const BarChart = ({data, title, marginBottom, marginRight}) => {
         indexBy="label"
         margin={{ top: 50, right: 20, bottom: marginBottom, left: marginRight }}
         padding={0.3}
-        colors={{ scheme: 'pastel2' }}
+        // colors={{ scheme: 'pastel2' }}
+        colors={"#FFC540"}
         defs={[
             {
                 id: 'dots',

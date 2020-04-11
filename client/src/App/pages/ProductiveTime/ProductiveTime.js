@@ -18,7 +18,7 @@ const ProductiveTime = () => {
                         </div>
                     </div>
                 </div>
-                <div className='column '>
+                <div className='column'>
                     <img src={time} alt='img'/>
                 </div>
             </div>

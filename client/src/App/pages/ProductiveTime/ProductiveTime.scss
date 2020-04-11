@@ -9,13 +9,15 @@
     flex-direction: row;
     justify-content: space-between;
     .column {
-      width: 45%;
+      width: 40%;
       img {
-        width: 100%;
-        margin-top: -3rem;
+        width: 80%;
+        margin-top: -1.5rem;
         height: auto;
         opacity: 100%;;
+        margin-top: 1rem;
     }
+    
     }
   }
 
