@@ -1,16 +1,17 @@
 @import "../../lib/styles.scss";
 .SurveyView {
-  
-    .logo {
-        position: absolute;
-        top: -15rem;
-        right: 8%;
-        background-image: "../../assets/deltalogo.gif";
-        opacity: 15%;
-      }
-      img {
-        width: 60rem;
-      }
+  .logo {
+    position: absolute;
+    top: -15rem;
+    right: 8%;
+    background-image: "../../assets/deltalogo.gif";
+    // opacity: 15%;
+    webkit-filter: opacity(0.15);
+    filter: opacity(0.15);
+  }
+  img {
+    width: 60rem;
+  }
   .landing {
     height: 60rem;
 
@@ -41,20 +42,20 @@
   }
 
   .HowWeFeel {
-      height: 75rem;
+    height: 75rem;
   }
 
   .AccessTools {
-      height: 53rem;
+    height: 53rem;
   }
 
   .BiggestConcerns {
-      height: 40rem;
+    height: 40rem;
   }
 
   .CommunicationTools {
     height: 33rem;
-}
+  }
 
   .WorkingWell {
     height: 47rem;
