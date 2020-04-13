@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { getFeeling, getFeelingByCompany } from '../../services/getData'
+import { getFeeling, getFeelingByCompany, getCompaniesDropdown } from '../../services/getData'
 // import { BarChart } from '../../components/BarChart/Barchart'
 import BubbleChart from '../../components/BubbleChart/BubbleChart'
 import BarChart from '../../components/BarChart/BarChart'
@@ -7,6 +7,7 @@ import './HowWeFeel.scss';
 
 const HowWeFeel = (props) => {
   const [feeling, setFeeling] = useState('')
+  const [availableCompanies, setAvailableCompanies] = useState('')
   const [feelingsBy, setFeelingsBy] = useState('')
   const [company, setCompany] = useState('All')
   const [level, setLevel] = useState('All')
@@ -25,6 +26,7 @@ const HowWeFeel = (props) => {
   }
 
   useEffect(() => {
+    getCompaniesDropdown().then( res => setAvailableCompanies(res))
     getFeeling().then(res => setFeeling(setCleanData(res)))
     getFeelingByCompany(company, level).then(res => setFeelingsBy(res))
   }, [company, level])
@@ -42,7 +44,7 @@ const HowWeFeel = (props) => {
           <label for="cars">Choose a company:</label>
           <select id="cars" onChange={(e) => setCompany(e.target.value)}>
             <option key={'All'} value={'All'}>{'All'}</option>
-            {props.companies && props.companies.map(item => {
+            {availableCompanies && availableCompanies.map(item => {
               return <option key={item.label} value={item.label}>{item.label}</option>
             })}
 

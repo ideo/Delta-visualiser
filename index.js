@@ -63,6 +63,29 @@ app.get("/api/getAcrossSen", function (req, res) {
     });
 });
 
+app.get("/api/getCompaniesDropdown", function (req, res) {
+    // Identifying which document we'll be accessing/reading from
+    var doc = new GoogleSpreadsheet('1Ol47Yx6CkDNWo6JPPm-8vAKQ0b0iKU_N218wPVahCeY');
+    // Authentication
+    doc.useServiceAccountAuth(creds, function (err) {
+        // Set up the sheet you'd like to get the data from. In this case 3.
+        doc.getRows(9, callback)
+        function callback(err, rows) {
+            res.json(getDefaultShape(rows))
+        }
+    });
+});
+
+const getDefaultShape = (rows) => {
+    const data = rows.map(row => {
+        return {
+            'label': row.title,
+            'value': row.value,
+        }
+    })
+    return data
+}
+
 const getShapedFeeling = (rows) => {
     const data = rows.map(row => {
         return {

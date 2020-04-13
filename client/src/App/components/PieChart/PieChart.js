@@ -7,7 +7,7 @@ const PieChart = ({data, color}) => {
     <div className="PieChart">
       <ResponsivePie
         data={data}
-        margin={{ top: 10, right: 20, bottom: 10, left: 20 }}
+        margin={{ top: 10, right: 40, bottom: 10, left: 0 }}
         cornerRadius={2}
         innerRadius={0.5}
         colors={{ scheme: 'nivo' }}

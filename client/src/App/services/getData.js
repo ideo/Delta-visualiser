@@ -145,3 +145,21 @@ export async function getWorkingWell() {
         .then(res => { return res.json() })
     return data
 }
+
+export async function getCompaniesDropdown() {
+    let host;
+    if (window.location.origin.includes('localhost')) {
+        host = 'http://localhost:5000/api/getCompaniesDropdown';
+    } else {
+        host = 'https://deltavis.herokuapp.com/api/getCompaniesDropdown'; //replace here
+    }
+    const data = await fetch(host, {
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        }
+
+    })
+        .then(res => { return res.json() })
+    return data
+}

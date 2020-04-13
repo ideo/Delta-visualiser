@@ -51,8 +51,7 @@ const SurveyView = () => {
   const renderColumnContent = (title, body, data) => {
     return (
       <div className='column' key={title}>
-        <h4 className='title'><span className='highlighted'>{title}</span></h4>
-        <p className='body'>{body}</p>
+        <h3 className='title'><span className='highlighted'>{title}</span></h3>
         <PieChart data={data} width={200} height={200} color={'set3'} />
       </div>
     )
@@ -67,8 +66,8 @@ const SurveyView = () => {
   const renderHeardFrom = () => {
     return (
       <div className='HeardFrom'>
-        <h2>WE HEARD FROM</h2>
-        <p>1,498 employees across Intercorp</p>
+        <h2>We heard from <br/><span className='highlighted'>1,498 employees</span> across Intercorp</h2>
+        
         <div className='content'>
           {weHeardFrom.map(item => {
             return renderColumnContent(item.title, item.body, getKeyData(item.key))
