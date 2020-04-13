@@ -16,6 +16,42 @@ export const weHeardFrom = [
     },
 ]
 
+export const howWeFeelCopy = [
+    [
+        {
+            header: 'Those who feel 😄 recommend',
+            body1: '“Creating an account with Trello and keeping track of the tasks and how each one is progressing. We use shared screen a lot in Teams.”',
+            body2: '”Daily reports or calls of 10 minutes maximum to know what we have pending, what we have completed and how we will organize ourselves during the day.”'
+        },
+        {
+            header: 'Those who feel 😢 are concerned by',
+            body1: '“Social interactions becoming 100% transactional, with no space to build relevant relationships with coworkers.”',
+            body2: '“Not being able to contact and establish a close relationship with my clients.”',
+            body3: '“My daughters getting used to my physical presence and when the isolation is over, it affecting them emotionally”'
+        }
+    ],
+    [
+        {
+            header: '1:1',
+            fact: 'Team Members were about as likely to describe their week as productive as they were to describe it as challenging.',
+            body1: 'Continue to take pride in your productivity but be sure to take time for de-stressing and relaxation.',
+            body2: 'Look for opportunities to ease the burden of your managers and leads, through things like proactive communication, status updates, and self-directedness.'
+        },
+        {
+            header: '1:2',
+            fact: 'Team Leads were twice as likely to use the term challenging as they were productive.',
+            body1: 'Create space to be open about the challenges you face with your team(s), and take the time you need for breaks and re-energizing.',
+            body2: 'Encourage practices from your team such as status updates and proactive communication that might help ease your workload.'
+        },
+        {
+            header: '1:3',
+            fact: 'Area & Department Leads were three times more likely to use the words challenging or intense as the word productive',
+            body1: 'Empower all of our employees to support each other, through check-ins and support networks, and don’t be afraid to be open about your own challenges.',
+            body2: 'Set an example: highlight your own best practices to show what good remote leadership looks like.'
+        }
+    ]
+]
+
 export const accessTools = [
     {
         header: '',
