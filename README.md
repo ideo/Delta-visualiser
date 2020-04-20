@@ -1,4 +1,19 @@
-# React + Node + Google spreadsheets Template
+
+# Delta survey viz
+In order to run this repo locally: 
+1. `git clone` repo
+2. `yarn` to install everything in root repo
+3. `cd client` go to client directory
+4. `yarn && npm run build` to build and install dependencies
+5. `cd ..` go back to root repo
+6. `npm run dev` to start both backend and frontend concurrently. 
+
+This page renders data coming from a private spreadsheet, makes the aggregations in the backend, and visualizes it with nivo.rocks. 
+
+Ping me (Marta Soto @msotomorras) if you need any more info or help setting up.
+
+## Forked from
+### React + Node + Google spreadsheets Template
 
 Easy setup for Node+Express server linked to Google Spreadsheets with React Frontend. 
 `npm run dev` for running Front and Back concurrently. Backend runs with nodemon. The client app comes set up with react-router-dom and sass.
