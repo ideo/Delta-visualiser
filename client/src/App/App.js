@@ -8,6 +8,9 @@ import {
 } from "react-router-dom";
 import InteractiveGraph from './pages/InteractiveGraph/InteractiveGraph';
 import WeSpokeToGraph from './pages/WeSpokeToGraph/WeSpokeToGraph'
+import WeSpokeToGraph1 from './pages/WeSpokeToGraph1/WeSpokeToGraph'
+import WeSpokeToGraph2 from './pages/WeSpokeToGraph2/WeSpokeToGraph'
+import WeSpokeToGraph3 from './pages/WeSpokeToGraph3/WeSpokeToGraph'
 
 // import SignInView from './pages/SingInView/SignInView'
 // import SurveyView from './pages/SurveyView/SurveyView'
@@ -24,19 +27,7 @@ const App = () => {
     <div className="App">
       <Router>
       <div>
-        {/* <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/interactive">Interactive Graph</Link>
-            </li>
-            <li>
-              <Link to="/wespoketo">We spoke to charts</Link>
-            </li>
-          </ul>
-        </nav> */}
+        
 
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
@@ -44,8 +35,14 @@ const App = () => {
           <Route path="/interactive">
             <InteractiveGraph />
           </Route>
-          <Route path="/wespoketo">
-            <WeSpokeToGraph />
+          <Route path="/wespoketo1">
+            <WeSpokeToGraph1 />
+          </Route>
+          <Route path="/wespoketo2">
+            <WeSpokeToGraph2 />
+          </Route>
+          <Route path="/wespoketo3">
+            <WeSpokeToGraph3 />
           </Route>
         </Switch>
       </div>
