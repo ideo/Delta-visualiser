@@ -40,7 +40,7 @@ const HowWeFeel = (props) => {
     return (
       <div className='controls'>
         <div>
-          <label for="cars">Choose a company:</label>
+          <label for="cars">Choose a <span className='highlighted'>company</span>:</label>
           <select id="cars" onChange={(e) => setCompany(e.target.value)}>
             <option key={'All'} value={'All'}>{'All'}</option>
             {availableCompanies && availableCompanies.map(item => {
@@ -51,16 +51,23 @@ const HowWeFeel = (props) => {
         </div>
         <br />
         <div>
-          <label for="level">Choose a level of seniority:</label><br></br>
+          <label for="level">Choose a <span className='highlighted'>level of seniority</span>:</label>
+          <select id="level" onChange={(e) => setLevel(e.target.value)}>
+            <option key={'All'} value={'All'}>{'All'}</option>
+            {props.seniority && props.seniority.map(item => {
+              return <option key={item.label} value={item.label}>{item.label}</option>
+            })}
 
-          <input type="radio" id={'All'} name={'All'} value={'All'} onClick={() => handleCheckboxes('All')} checked={level === 'All'} />
+          </select>
+
+          {/* <input type="radio" id={'All'} name={'All'} value={'All'} onClick={() => handleCheckboxes('All')} checked={level === 'All'} />
           <label for={'All'} >{'All'}</label>
           {props.seniority && props.seniority.map(item => {
             return <div className='radio' key={item.label} onClick={() => handleCheckboxes(item.label)}>
               <input type="radio" id={item.label} name={item.label} value={item.label} checked={level === item.label} />
               <label for={item.label} >{item.label}</label><br></br>
             </div>
-          })}
+          })} */}
 
 
         </div>
@@ -168,7 +175,7 @@ const HowWeFeel = (props) => {
 
   return (
     <div className='HowWeFeel'>
-      <h1>How did we feel about the last week of remote working?</h1>
+      {/* <h1>How did we feel about the last week of remote working?</h1> */}
       <div className='content'>
         <div className='text'>
           <p className='bold'>Change the settings to find out more</p>
@@ -178,8 +185,8 @@ const HowWeFeel = (props) => {
           {feelingsBy && feelingsBy.length > 0 && <BarChart data={feelingsBy} key={'value'} title={'nr of people'} marginBottom={80} marginRight={60} />}
         </div>
       </div>
-      {renderLearning1()}
-      {renderLearning2()}
+      {/* {renderLearning1()} */}
+      {/* {renderLearning2()} */}
     </div>
   )
 }

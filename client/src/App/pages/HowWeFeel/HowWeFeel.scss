@@ -4,16 +4,24 @@
     
   .content {
     display: flex;
+    flex-direction: column;
     width: 100%;
     margin-top: 1rem;
     .text {
-      width: 30%;
-      padding-right: 2rem;
+      width: 90%;
+      margin: auto;
+      // padding-right: 2rem;
       // background: pink;
     }
     .chart {
-      width: 70%;
+      width: 90%;
+      margin: auto;
       // background: lightgray;
+    }
+    .controls {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
     }
     padding-bottom: 5rem;
   }

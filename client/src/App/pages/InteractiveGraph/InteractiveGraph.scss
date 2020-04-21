@@ -1,0 +1,64 @@
+@import "../../lib/styles.scss";
+.InteractiveGraph {
+  .logo {
+    position: absolute;
+    top: -15rem;
+    right: 8%;
+    background-image: "../../assets/deltalogo.gif";
+    // opacity: 15%;
+    webkit-filter: opacity(0.1);
+    filter: opacity(0.1);
+  }
+  img {
+    width: 60rem;
+  }
+  .landing {
+    height: 60rem;
+
+    .HeardFrom {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: 40rem;
+      .content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .column {
+          width: 30%;
+          flex-direction: column;
+          position: relative;
+          margin-top: 3rem;
+          .title {
+            font-weight: bold;
+            // margin: 0;
+            margin-bottom: 0.5rem;
+          }
+          .body {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .HowWeFeel {
+    height: 75rem;
+  }
+
+  .AccessTools {
+    height: 53rem;
+  }
+
+  .BiggestConcerns {
+    height: 40rem;
+  }
+
+  .CommunicationTools {
+    height: 33rem;
+  }
+
+  .WorkingWell {
+    height: 47rem;
+  }
+}
