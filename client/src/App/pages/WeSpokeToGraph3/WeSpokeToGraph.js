@@ -48,11 +48,18 @@ const WeSpokeToGraph = () => {
   }, [setAcrossCompanies, setDepartments, setAcrossSeniority])
 
 
+  const colorArray = [
+    '#80003C',
+    '#FF4DA0',
+    '#FF0077',
+    '#802650',
+    '#CC005F']
+    
   const renderColumnContent = (title, body, data) => {
     return (
       <div className='column' key={title}>
         <h3 className='title'><span className='highlighted'>{title}</span></h3>
-        <PieChart data={data} width={200} height={200} color={'set3'} />
+        <PieChart data={data} width={200} height={200} colorArray={colorArray} color={'set3'} />
       </div>
     )
   }

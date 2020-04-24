@@ -1,17 +1,17 @@
 export const weHeardFrom = [
     {
         key: 'companies',
-        title: 'Across 31 companies',
+        title: 'Organización',
         
     },
     {
         key: 'departments',
-        title: 'Working in various departments of companies',
+        title: 'Áreas',
         
     },
     {
         key: 'seniority',
-        title: 'Varying levels of seniority',
+        title: 'Posición',
         
     },
 ]

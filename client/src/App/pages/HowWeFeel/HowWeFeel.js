@@ -40,7 +40,7 @@ const HowWeFeel = (props) => {
     return (
       <div className='controls'>
         <div>
-          <label for="cars">Choose a <span className='highlighted'>company</span>:</label>
+          <label for="cars">Selecciona una <span className='highlighted'>organización</span>:</label>
           <select id="cars" onChange={(e) => setCompany(e.target.value)}>
             <option key={'All'} value={'All'}>{'All'}</option>
             {availableCompanies && availableCompanies.map(item => {
@@ -51,7 +51,7 @@ const HowWeFeel = (props) => {
         </div>
         <br />
         <div>
-          <label for="level">Choose a <span className='highlighted'>level of seniority</span>:</label>
+          <label for="level">Selecciona un <span className='highlighted'>cargo</span>:</label>
           <select id="level" onChange={(e) => setLevel(e.target.value)}>
             <option key={'All'} value={'All'}>{'All'}</option>
             {props.seniority && props.seniority.map(item => {
@@ -178,7 +178,7 @@ const HowWeFeel = (props) => {
       {/* <h1>How did we feel about the last week of remote working?</h1> */}
       <div className='content'>
         <div className='text'>
-          <p className='bold'>Change the settings to find out more</p>
+          <p className='bold'>Modifica la búsqueda para más informacioón:</p>
           {renderControls()}
         </div>
         <div className='chart'>
