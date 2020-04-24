@@ -9,7 +9,8 @@ const PieChart = ({ data, colorArray }) => {
         '#FF0077',
         '#FEC53F',
         '#5E7A68',
-        '#FF4DA0']
+        '#FF4DA0',
+    '#5DC781']
     return (
         <div className="PieChart">
             <ResponsivePie
