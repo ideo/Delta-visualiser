@@ -178,7 +178,7 @@ const HowWeFeel = (props) => {
       {/* <h1>How did we feel about the last week of remote working?</h1> */}
       <div className='content'>
         <div className='text'>
-          <p className='bold'>Modifica la búsqueda para más informacioón:</p>
+          <p className='bold'>Modifica la búsqueda para más información:</p>
           {renderControls()}
         </div>
         <div className='chart'>

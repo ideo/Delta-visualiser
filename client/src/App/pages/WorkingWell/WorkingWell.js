@@ -38,25 +38,27 @@ const WorkingWell = () => {
     }
     
     return (
-        <div className='WorkingWell'>
-            <h1>{workingWellCopy[0]}</h1>
-            <div className='content'>
-                <div className='column'>
-                    <div className='title'>
-                        <div className='bold'><span className='highlighted'>WHAT DO WE DO?</span></div>
-                        <div className='body'>
-                            {workingWellCopy[1]}<br /><br />
-                            {workingWellCopy[2]}<br /><br />
-                        </div>
-                    </div>
-                </div>
-                <div className='column big'>
-                    {workingWell && workingWell.length > 0 && 
-                        <BarChart data={workingWell} format={'%'} title={'% of responses'} marginBottom={130} marginRight={120} key={'what'} />}
-                </div>
-            </div>
-            {renderQuotes()}
-        </div>
+        // <div className='WorkingWell'>
+        //     <h1>{workingWellCopy[0]}</h1>
+        //     <div className='content'>
+        //         <div className='column'>
+        //             <div className='title'>
+        //                 <div className='bold'><span className='highlighted'>WHAT DO WE DO?</span></div>
+        //                 <div className='body'>
+        //                     {workingWellCopy[1]}<br /><br />
+        //                     {workingWellCopy[2]}<br /><br />
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         <div className='column big'>
+        //             {workingWell && workingWell.length > 0 && 
+        //                 <BarChart data={workingWell} format={'%'} title={'% of responses'} marginBottom={130} marginRight={120} key={'what'} />}
+        //         </div>
+        //     </div>
+        //     {renderQuotes()}
+        // </div>
+        workingWell && workingWell.length > 0 && 
+            <BarChart data={workingWell} format={'%'} title={'% of responses'} marginBottom={130} marginRight={120} key={'what'} />
     )
 }
 

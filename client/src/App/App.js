@@ -15,6 +15,8 @@ import WeSpokeToGraph3 from './pages/WeSpokeToGraph3/WeSpokeToGraph'
 // import SignInView from './pages/SingInView/SignInView'
 // import SurveyView from './pages/SurveyView/SurveyView'
 import './App.scss';
+import BiggestConcerns from './pages/BiggestConcerns/BiggestConcerns';
+import WorkingWell from './pages/WorkingWell/WorkingWell';
 
 setGlobal({
   userIsAuth: !!localStorage.getItem('delta-survey'),
@@ -43,6 +45,12 @@ const App = () => {
           </Route>
           <Route path="/wespoketo3">
             <WeSpokeToGraph3 />
+          </Route>
+          <Route path="/concerns">
+            <BiggestConcerns />
+          </Route>
+          <Route path="/workingwell">
+            <WorkingWell />
           </Route>
         </Switch>
       </div>
